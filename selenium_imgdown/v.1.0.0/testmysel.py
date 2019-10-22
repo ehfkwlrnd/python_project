@@ -52,7 +52,7 @@ from selenium_imgdown import WebImgDownloader as wid
 
 
 ## """Naver"""
-base = 'https://comic.naver.com/webtoon'
+base = 'https://comic.naver.com'
 driverLoc = 'D:/Users/yuno/Desktop/sysmex_table/chromedriver'
 w = wid(base, driverLoc)
 
