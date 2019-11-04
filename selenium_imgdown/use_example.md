@@ -4,13 +4,13 @@
 
    ![img02][link02]
 
-   [link02]: https://raw.githubusercontent.com/ehfkwlrnd/python_project/master/selenium_imgdown/img/02.png	""버전 확인""
+   [link02]:./img/02.png	""버전 확인""
 
    
 
    ![img03][link03]
 
-   [link03]:https://raw.githubusercontent.com/ehfkwlrnd/python_project/master/selenium_imgdown/img/03.png	""버전에 맞는 크롬 드라이버 다운로드""
+   [link03]:./img/03.png	""버전에 맞는 크롬 드라이버 다운로드""
 
    
 
@@ -18,7 +18,7 @@
 
 	![img04][link04]
 	
-	[link04]:https://raw.githubusercontent.com/ehfkwlrnd/python_project/master/selenium_imgdown/img/04.png ""url 확인""
+	[link04]:./img/04.png ""url 확인""
 	
 	
 	
@@ -26,7 +26,7 @@
 	
 	![img05][link05]
 	
-	[link05]:https://raw.githubusercontent.com/ehfkwlrnd/python_project/master/selenium_imgdown/img/05.png ""개발자 도구를 이용하여 셀렉터 확인""
+	[link05]:./img/05.png ""개발자 도구를 이용하여 셀렉터 확인""
 	
 	
 	
