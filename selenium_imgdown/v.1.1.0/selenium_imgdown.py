@@ -1,13 +1,22 @@
 from bs4 import BeautifulSoup as bs
+import urllib.request as request
 import urllib.parse as parse
 from selenium import webdriver
 import os
 from datetime import datetime
+from zipfile import ZipFile
+import requests
 
 class WebImgDownloader:
     def __init__(self, base, driverLoc):
         self.base = base
         self.driver = webdriver.Chrome(driverLoc)
+
+        self.headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36'}
+        
+        opener = request.build_opener()
+        opener.addheaders = [('User-Agent','Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36')]
+        request.install_opener(opener)
 
     def __one(self, url, selector, src, folder):
         try:
@@ -20,18 +29,18 @@ class WebImgDownloader:
             print(title)
             
             log = f'{datetime.now()}\n{title}'
-            path = f'{folder}/{title}'
-            if not os.path.isdir(path):
-                os.mkdir(path)
+            path = f'{folder}/{title}.zip'
+            with ZipFile(path, 'w') as zf:
             
-            imgs = soup.select(selector)
-            i = 0      
-            for img in imgs:
-                i += 1
-                url = parse.urljoin(self.base, img[src])
-                file = f'{i}.jpg'
-                request.urlretrieve(url, f'{path}/{file}')
-                print(file)
+                imgs = soup.select(selector)
+                i = 0      
+                for img in imgs:
+                    i += 1
+                    url = parse.urljoin(self.base, img[src])
+                    file = f'{i}.jpg'
+                    r = requests.get(url, headers=self.headers)
+                    zf.writestr(file, r.content)
+                    print(file)
         except KeyboardInterrupt:
             print('강제 종료')
             log += '(강제 종료) '
