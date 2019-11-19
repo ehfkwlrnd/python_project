@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup as bs
+import urllib.request as request
 import urllib.parse as parse
 from selenium import webdriver
 import os
@@ -8,6 +9,10 @@ class WebImgDownloader:
     def __init__(self, base, driverLoc):
         self.base = base
         self.driver = webdriver.Chrome(driverLoc)
+        
+        opener = request.build_opener()
+        opener.addheaders = [('User-Agent','Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36')]
+        request.install_opener(opener)
 
     def __one(self, url, selector, src, folder):
         try:
