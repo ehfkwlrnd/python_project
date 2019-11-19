@@ -110,9 +110,9 @@ while done:
                 elif work == 2:
                     print('select : CreatePerson & AddFace')
                     personName = input('personName : ')
-                    password = getpass('password : ')
+                    password = aes.encrypt(getpass('password : '))
                     flowName = input('flowName : ')
-                    personData = aes.encrypt(f'{{ "password" : "{password}", "flowname" : "{flowName}" }}')
+                    personData = f'{{ "password" : "{password}", "flowname" : "{flowName}" }}'
                     r = fm.CreatePerson(groupId, personName, personData)
                     print(r)
 
@@ -120,9 +120,9 @@ while done:
                 elif work == 3:
                     print('select : CreatePerson & AddFace')
                     personName = input('personName : ')
-                    password = getpass('password : ')
+                    password = aes.encrypt(getpass('password : '))
                     flowName = input('flowName : ')
-                    personData = aes.encrypt(f'{{ "password" : "{password}", "flowname" : "{flowName}" }}')
+                    personData = f'{{ "password" : "{password}", "flowname" : "{flowName}" }}'
                     r = fm.CreatePerson(groupId, personName, personData)
                     print(r)
 
