@@ -59,8 +59,8 @@
 	3. 코드 실행
 
 		```python
-		#WebImgDownloader 사용
-	   from selenium_imgdown import WebImgDownloader as wid
+		#WebImgDownloader 사용 (TWebImgDownloader도 마찬가지)
+	   from webimgdownloader import WebImgDownloader as wid
 	   
 	   base = 'https://comic.naver.com'
 	   w = wid(base)
@@ -73,8 +73,8 @@
 	   w.one(url, title_selector, img_selector, img_src, folder)
 	   ```
 	   ```python
-	   #SWebImgDownloader 사용
-	   from selenium_imgdown import SWebImgDownloader as swid
+	   #SWebImgDownloader 사용 (STWebImgDownloader도 마찬가지)
+	   from webimgdownloader import SWebImgDownloader as swid
 	   
 	   base = 'https://comic.naver.com'
 	driverLoc = 'D:/Users/yuno/Desktop/driver/chromedriver'
