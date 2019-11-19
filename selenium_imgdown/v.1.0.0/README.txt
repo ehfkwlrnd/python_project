@@ -1,4 +1,4 @@
-# README
+﻿# README
 
 # 해당 모듈의 목적 : 웹툰과 같은 연속적인 이미지의 다운로드
 
@@ -7,7 +7,7 @@
 # class : WebImgDownloader
 - field :
   - (string) base : 베이스가 되는 웹사이트 주소 (ex:https://www.naver.com)
-  - (string) driver : 웹드라이버(크롬)
+  - (string) driver : 웹드라이버(크롬) 위치
   
 + method :
   + one(url, selector, src, folder) : 1회차 분량의 이미지(만화)를 다운로드 받음
