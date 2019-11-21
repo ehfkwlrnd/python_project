@@ -34,6 +34,14 @@
 	2. SWebImgDownloader
 		
 		> selenium으로 html소스 읽어옴
+		
+	3. TWebImgDownloader 
+	
+		> requests로 html소스 읽어오고 스레싱하여 작억
+		
+	4. STWebImgDownloader
+	
+		> selenium으로 html소스 읽어오고 스레싱하여 작업
 	
 * 사용법
 	1. url 확인
@@ -77,7 +85,7 @@
 	   from webimgdownloader import SWebImgDownloader as swid
 	   
 	   base = 'https://comic.naver.com'
-	driverLoc = 'D:/Users/yuno/Desktop/driver/chromedriver'
+	   driverLoc = 'D:/Users/yuno/Desktop/driver/chromedriver'
 	   w = swid(base, driverLoc)
 	   
 	   url = 'https://comic.naver.com/webtoon/detail.nhn?titleId=734348&no=1&weekday=thu'
