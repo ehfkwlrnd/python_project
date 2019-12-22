@@ -108,7 +108,7 @@ class FaceAPI:
             raise Exception(str({'error':{'code' : 'NotFoundCandidates'}}))
         return candidates[0]
 
-    def IdentifyMulti(self, grouId, imgPath):
+    def IdentifyMulti(self, groupId, imgPath):
         persons = self.DetectMulti(imgPath)
         headers = {
             'Content-Type': 'application/json',
@@ -117,6 +117,7 @@ class FaceAPI:
         url = self.endPoint + '/identify?'
         candidateList = []
         for person in persons:
+            faceId = person.get('faceId')
             response = requests.post(url, data='{ "personGroupId": "' + groupId + '",\
                                                     "faceIds": ["' + faceId + '"],\
                                                     "maxNumOfCandidatesReturned": 1,"confidenceThreshold": 0.5}', headers=headers).json()
