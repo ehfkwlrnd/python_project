@@ -1,0 +1,11 @@
+문제 발견 - 라즈베리파이를 계속 전원을 켜 둔 상태에서 와이파이와 블루투스가 끊기는 현상 발생
+해결 - 라즈베리파이를 일정 시간마다 재부팅 되도록하고, 재부팅시 FaceCommute프로그램을 실행시키도록 함
+
+과정 -
+sudo crontab -e (자동 재부팅을 하기 위한 준비)
+0 7 * * * /sbin/reboot (마지막줄에 추가, 매일 7시 0분에 재부팅)
+0 16 * * * (매일 16시 0분에 재부팅)
+
+nano /etc/profile.d/bash_completion.sh (부팅시 실행할 프로그램을 정하기 위한 준비)
+(sleep 10 && python /home/pi/iot/test/FaceCommute.py)& (마지막줄에 추가, sleep 을 안 해주면 리소스가 다 준비되지 않아서 에러가 난다)
+
