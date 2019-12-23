@@ -1,0 +1,7 @@
+base=https://manamoa20.net/
+driverLoc=D:\Users\yuno\Desktop\testfolder\chromedriver.exe
+title_selector=title
+link_selector=div.chapter-list div.slot > a
+link_href=href
+img_selector=div.view-content img
+img_src=src

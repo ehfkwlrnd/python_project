@@ -37,7 +37,7 @@
 		
 	3. TWebImgDownloader 
 	
-		> requests로 html소스 읽어오고 스레싱하여 작억
+		> requests로 html소스 읽어오고 스레싱하여 작업
 		
 	4. STWebImgDownloader
 	
@@ -64,7 +64,7 @@
 		
 		
 		
-	3. 코드 실행
+	3. 코드 예시
 
 		```python
 		#WebImgDownloader 사용 (TWebImgDownloader도 마찬가지)
@@ -97,7 +97,7 @@
 	   w.close()
 	   ```
   
-   
+  > tkinter를 사용한 GUI프로그램 url : 
   
    
   
